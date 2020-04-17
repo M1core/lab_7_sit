@@ -10,7 +10,11 @@ const db = require("./db");
 db.sync();
 
 const app = express();
-app.get("/", (req, res) => res.end("root"));
+app.get("/", (req, res) =>
+  res.end(
+    "This is root of our app. \nTry to make querry on /students /groups routes."
+  )
+);
 app.use(bodyParser.json());
 
 initRouter(app);
