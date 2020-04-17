@@ -15,6 +15,5 @@ app.use(bodyParser.json());
 
 initRouter(app);
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server started at ${process.env.PORT}`)
-);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server started at ${PORT}`));
