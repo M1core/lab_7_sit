@@ -10,9 +10,11 @@ const db = require("./db");
 db.sync();
 
 const app = express();
-
+app.get("/", (req, res) => res.end("root"));
 app.use(bodyParser.json());
 
 initRouter(app);
 
-app.listen(3000, () => console.log(`Server started at ${process.env.PORT}`));
+app.listen(process.env.PORT, () =>
+  console.log(`Server started at ${process.env.PORT}`)
+);
